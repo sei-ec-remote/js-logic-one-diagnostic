@@ -18,8 +18,17 @@ Ex: If the number passed in is 10; 3, 5, 6, and 9 are both less than 10 and mult
 */
 const sumOfNumbers = (num) => {
 	// answer here
+	let sum = 0
+	for (let i = 0; i < num; i++){
+		if(i % 3 == 0 || i % 5 == 0){
+			//console.log(i)
+			sum = sum + i
+		}
+	}
+	return sum
 }
 
+console.log(sumOfNumbers(10))
 /*
 Question 2
 
@@ -27,8 +36,16 @@ Finish the function. Using the string that is passed in return the number of how
 */
 const vowelCount = (str) => {
 	// answer here
+	let count = 0
+	str.split("").forEach(element => {
+		if(["a","e","i","o","u"].includes(element)){
+			//console.log(count)
+			count++
+		}
+	});
+	return count
 }
-
+console.log(vowelCount("abcde"))
 /*
 Question 3
 
@@ -38,6 +55,16 @@ Ex: If the string that is passed in is `hey there person` the return value shoul
 */
 const stringReverse = (str) => {
 	// answer here
+	finalWord = []
+	str.split(" ").forEach(element => {
+		if(element.length >= 5){
+			finalWord.push(element.split("").reverse().join(""))
+		}
+		else{
+			finalWord.push(element)
+		}
+	})
+	return finalWord.join(" ");
 }
 
 module.exports = {
