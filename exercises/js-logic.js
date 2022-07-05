@@ -12,12 +12,22 @@ TEST: To test run the commands `npm run test` in your terminal
 /*
 Question 1
 
-Finish the function. Using the number that is passed in, `num`, first find all the numbers that are less than it (`num`) that are multiples of 3 or 5, then return the sum of these numbers. 
+Finish the function. Using the number that is passed in, `num`, 
+first find all the numbers that are less than it (`num`) that are multiples of 3 or 5, 
+then return the sum of these numbers. 
 
 Ex: If the number passed in is 10; 3, 5, 6, and 9 are both less than 10 and multiples of 3 or 5. The sum of these numbers are 23
 */
 const sumOfNumbers = (num) => {
 	// answer here
+	let arr = [];
+	for (let i = 0; i < num; i++){
+		if (i % 3 ===0 || i % 5 ===0){
+
+		}
+
+	}
+
 }
 
 /*
