@@ -18,7 +18,18 @@ Ex: If the number passed in is 10; 3, 5, 6, and 9 are both less than 10 and mult
 */
 const sumOfNumbers = (num) => {
 	// answer here
+	// let anArray = []
+	let total = 0
+	for (let i = 1; i < num; i++) {
+		if (i % 3  === 0 || i % 5 === 0) {
+			total += i
+		}
+	}
+	// return  anArray.reduce((total, amount) => total + amount); 
+	return total
 }
+// console.log(anArray)
+console.log(sumOfNumbers(10))
 
 /*
 Question 2
@@ -27,8 +38,18 @@ Finish the function. Using the string that is passed in return the number of how
 */
 const vowelCount = (str) => {
 	// answer here
-}
+	let vowelNum = 0
+	let anArray = str.split('')
+	for (let i = 0; i < str.length; i++) {
+		if (anArray[i] === 'a' || anArray[i] === 'e' || anArray[i] === 'i' || anArray[i] === 'o' || anArray[i] === 'u') {
+			vowelNum += 1
+		}
+		console.log(anArray[i])
+	}
+	return vowelNum
 
+}
+console.log(vowelCount("hello"))
 /*
 Question 3
 
