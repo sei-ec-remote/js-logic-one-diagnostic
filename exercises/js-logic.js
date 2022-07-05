@@ -17,7 +17,13 @@ Finish the function. Using the number that is passed in, `num`, first find all t
 Ex: If the number passed in is 10; 3, 5, 6, and 9 are both less than 10 and multiples of 3 or 5. The sum of these numbers are 23
 */
 const sumOfNumbers = (num) => {
-	// answer here
+	let sum = 0;
+	for(i=0;i<num;i++) {
+		if(i % 3 === 0 || i % 5 === 0) {
+			sum += i
+		}
+	}
+	return sum
 }
 
 /*
@@ -26,9 +32,18 @@ Question 2
 Finish the function. Using the string that is passed in return the number of how many vowels occur.
 */
 const vowelCount = (str) => {
-	// answer here
+	const char = str.split('')
+	console.log(char)
+	let vowels = 0;
+	for(i=0;i<char.length;i++) {
+		if(char[i] === 'a' ||
+		 char[i] ==='e' ||
+		 char[i] ==='i' ||
+		 char[i] ==='o' ||
+		 char[i] ==='u') vowels++
+	}
+	return vowels
 }
-
 /*
 Question 3
 
@@ -37,7 +52,12 @@ Finish the function. Using the string that is passed in return the same string b
 Ex: If the string that is passed in is `hey there person` the return value should be `hey ereht nosrep`
 */
 const stringReverse = (str) => {
-	// answer here
+	if(str.split(' ').length > 5) {
+		const char = str.split('')
+		let rstr = char.reverse()
+		console.log(rstr.join())
+		return rstr.join()
+	} else return str
 }
 
 module.exports = {
