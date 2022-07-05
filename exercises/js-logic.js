@@ -17,7 +17,13 @@ Finish the function. Using the number that is passed in, `num`, first find all t
 Ex: If the number passed in is 10; 3, 5, 6, and 9 are both less than 10 and multiples of 3 or 5. The sum of these numbers are 23
 */
 const sumOfNumbers = (num) => {
-	// answer here
+	const arr = [];
+	for (let i = 0; i < num; i ++)
+		if ((i % 3 === 0) || (i % 5 === 0)) {
+			arr.push(i);
+		}
+	const sumArr = arr.reduce((prev, curr) => prev + curr, 0)
+	return sumArr;	
 }
 
 /*
@@ -27,6 +33,9 @@ Finish the function. Using the string that is passed in return the number of how
 */
 const vowelCount = (str) => {
 	// answer here
+	let vowels = /[aeiou]/gi;
+	let result = str.match(vowels);
+	return result.length;
 }
 
 /*
@@ -38,6 +47,24 @@ Ex: If the string that is passed in is `hey there person` the return value shoul
 */
 const stringReverse = (str) => {
 	// answer here
+	// split string by words into array
+	let newArr = str.split(" ");
+	// check each item in array to see if length exceeds 5
+	const mappedArr = newArr.map((item) => {
+		if (item.length >= 5) {
+			let splitString = item.split("");
+			let reverseArr = splitString.reverse();
+			let joinArr = reverseArr.join("");
+			return joinArr;
+		} else {
+			return item;
+		}
+	})
+	console.log(mappedArr)
+	let result = mappedArr.join(" ");
+	return result;  
+	// if item length exceeds 5, reverse it
+	// join array items into new string
 }
 
 module.exports = {
