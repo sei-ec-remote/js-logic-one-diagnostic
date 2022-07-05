@@ -2,11 +2,11 @@
 =============== JavaScript Logic Challenge I ==================
 
 GOAL: Read each question and write code to complete each task
-      given. Do not change starter code or function names.
+	  given. Do not change starter code or function names.
 
 TEST: To test run the commands `npm run test` in your terminal
-      at the root of this directory.(js-logic-one-diagnostic)
-      Don't worry about capitalization.
+	  at the root of this directory.(js-logic-one-diagnostic)
+	  Don't worry about capitalization.
 */
 
 /*
@@ -17,7 +17,12 @@ Finish the function. Using the number that is passed in, `num`, first find all t
 Ex: If the number passed in is 10; 3, 5, 6, and 9 are both less than 10 and multiples of 3 or 5. The sum of these numbers are 23
 */
 const sumOfNumbers = (num) => {
-	// answer here
+	let total = 0
+	for (let i = 1; i < num; i++) {
+		if (i % 3 == 0 || i % 5 == 0) {
+			total += i
+		}
+	} return total
 }
 
 /*
@@ -26,7 +31,15 @@ Question 2
 Finish the function. Using the string that is passed in return the number of how many vowels occur.
 */
 const vowelCount = (str) => {
-	// answer here
+	const vowels = ['a', 'e', 'i', 'o', 'u']
+	let count = 0
+	const letters = str.split('')
+	letters.forEach((letter) => {
+		if (vowels.includes(letter)) {
+			count++
+		}
+	})
+	return count
 }
 
 /*
@@ -37,11 +50,11 @@ Finish the function. Using the string that is passed in return the same string b
 Ex: If the string that is passed in is `hey there person` the return value should be `hey ereht nosrep`
 */
 const stringReverse = (str) => {
-	// answer here
+	//ran out of time
 }
 
 module.exports = {
 	sumOfNumbers,
 	vowelCount,
-    stringReverse
+	stringReverse
 }
