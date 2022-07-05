@@ -18,8 +18,10 @@ Ex: If the number passed in is 10; 3, 5, 6, and 9 are both less than 10 and mult
 */
 const sumOfNumbers = (num) => {
 	// answer here
+	let nums  = (num < num && num % 3 === 0 && num % 5 === 0)
+    return nums + current
 }
-
+console.log(sumOfNumbers)
 /*
 Question 2
 
@@ -27,6 +29,9 @@ Finish the function. Using the string that is passed in return the number of how
 */
 const vowelCount = (str) => {
 	// answer here
+	vowel = ("a", "e", "i", "o", "u")
+	return str - vowel
+	
 }
 
 /*
