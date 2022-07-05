@@ -18,6 +18,14 @@ Ex: If the number passed in is 10; 3, 5, 6, and 9 are both less than 10 and mult
 */
 const sumOfNumbers = (num) => {
 	// answer here
+	let sum = 0
+
+	for(let i = 1; i < num; i++) {
+		if (i % 3 === 0 || i % 5 === 0) {
+			sum = sum + i 
+		}
+	}
+	return sum
 }
 
 /*
@@ -27,6 +35,16 @@ Finish the function. Using the string that is passed in return the number of how
 */
 const vowelCount = (str) => {
 	// answer here
+	const vowels = ['a', 'e', 'i', 'o', 'u']
+	let counter = 0
+
+	for(let letter of str.toLowerCase()) {
+		if(vowels.includes(letter)) {
+			counter ++
+		}
+	}
+	// console.log(`The text contains ${counter} vowels`)
+	return counter
 }
 
 /*
@@ -36,9 +54,7 @@ Finish the function. Using the string that is passed in return the same string b
 
 Ex: If the string that is passed in is `hey there person` the return value should be `hey ereht nosrep`
 */
-const stringReverse = (str) => {
-	// answer here
-}
+const stringReverse = (str) => str.split(' ').map((word) => (word.length >= 5) ? word.split('').reverse().join('') : word).join(' ')
 
 module.exports = {
 	sumOfNumbers,
