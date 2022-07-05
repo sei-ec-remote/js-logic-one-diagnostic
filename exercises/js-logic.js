@@ -16,32 +16,64 @@ Finish the function. Using the number that is passed in, `num`, first find all t
 
 Ex: If the number passed in is 10; 3, 5, 6, and 9 are both less than 10 and multiples of 3 or 5. The sum of these numbers are 23
 */
+
 const sumOfNumbers = (num) => {
-	// answer here
-}
-
-/*
-Question 2
-
-Finish the function. Using the string that is passed in return the number of how many vowels occur.
-*/
-const vowelCount = (str) => {
-	// answer here
-}
-
-/*
-Question 3
-
-Finish the function. Using the string that is passed in return the same string but if a word in that string is longer than 5 word reverse it.
-
-Ex: If the string that is passed in is `hey there person` the return value should be `hey ereht nosrep`
-*/
-const stringReverse = (str) => {
-	// answer here
-}
-
-module.exports = {
+	let numArr = [];
+  
+	for (let i = 1; i < num; i++) {
+	  if (i % 15 === 0) {
+		numArr.push(i);
+	  } else if (i % 3 === 0 || i % 5 === 0) {
+		numArr.push(i);
+	  }
+	}
+  
+	return numArr.length > 0
+	  ? numArr.reduce((prev, curr) => prev + curr)
+	  : 0;
+  };
+  
+  /*
+  Question 2
+  
+  Finish the function. Using the string that is passed in return the number of how many vowels occur.
+  */
+  const vowelCount = (str) => {
+	let vowels = ["a", "e", "i", "o", "u"];
+	let strArr = str.split("");
+	let count = 0;
+	strArr.forEach((i) => {
+	  if (vowels.includes(i)) {
+		count++;
+	  }
+	});
+	return count;
+  };
+  
+  /*
+  Question 3
+  
+  Finish the function. Using the string that is passed in return the same string but if a word in that string is longer than 5 word reverse it.
+  
+  Ex: If the string that is passed in is `hey there person` the return value should be `hey ereht nosrep`
+  */
+  const stringReverse = (str) => {
+	let strArray = str.split(" ");
+	let revArr = [];
+	strArray.forEach((i) => {
+	  if (i.length >= 5) {
+		i = i.split("").reverse().join("");
+		revArr.push(i);
+	  } else {
+		revArr.push(i);
+	  }
+	});
+	return revArr.join(" ");
+  };
+  
+  module.exports = {
 	sumOfNumbers,
 	vowelCount,
-    stringReverse
-}
+	stringReverse,
+  };
+  
